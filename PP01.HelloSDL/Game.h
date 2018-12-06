@@ -1,5 +1,5 @@
-#include"SDL.h"
-#include"TextureManager.h"
+#include "TextureManager.h"
+#include"Player.h"
 
 class Game
 {
@@ -13,6 +13,8 @@ public:
 	void clean();
 	bool running() { return m_bRunning; }
 	int m_currentFrame;
+	GameObject m_go;
+	Player m_player;
 	TextureManager m_textureManager;
 private:
 	SDL_Texture * m_pTexture;
