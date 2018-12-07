@@ -1,5 +1,6 @@
 #include "TextureManager.h"
 #include"Player.h"
+#include <vector>
 
 class Game
 {
@@ -13,9 +14,10 @@ public:
 	void clean();
 	bool running() { return m_bRunning; }
 	int m_currentFrame;
-	GameObject m_go;
-	Player m_player;
+
 	TextureManager m_textureManager;
+
+	
 private:
 	SDL_Texture * m_pTexture;
 	SDL_Rect m_sourceRectangle;
@@ -24,4 +26,11 @@ private:
 	SDL_Renderer* m_pRenderer;
 	bool m_bRunning;
 protected:
+	std::vector<GameObject*> m_gameObjects;
+
+
+	GameObject* m_go;
+	GameObject* m_player;
+	GameObject* m_enemy;
 };
+
